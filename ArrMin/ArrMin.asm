@@ -20,10 +20,10 @@
     M=D
     @R1
     D=M
-    @index
+    @i
     M=D+1
 (LOOP)
-    @index
+    @i
     D=M
     @last
     D=M-D
@@ -32,22 +32,33 @@
 
     @R0
     D=M
-    @index
+    @NEG
+    D;JLE
+(POS)
+    @i
     A=M
-    D=D-M
+    D=M-D
     @NEW
     D;JGT
     @INC
     0;JMP
+(NEG)
+    @i
+    A=M
+    D=D-M
+    @NEW
+    D;JLT
+    @INC
+    0;JMP
 
 (NEW)
-    @index
+    @i
     A=M
     D=M
     @R0
     M=D
 (INC)
-    @index
+    @i
     M=M+1
     @LOOP
     0;JMP
