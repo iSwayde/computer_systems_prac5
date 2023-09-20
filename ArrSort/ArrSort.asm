@@ -39,7 +39,6 @@
     D=M
     @NEGNEG
     D;JLT
-(NEGPOS)
     @INC
     0;JMP
 
