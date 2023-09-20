@@ -30,13 +30,13 @@
     @END
     D;JEQ
 
+    @R0
+    D=M
     @index
     A=M
-    D=M
-    @R0
     D=D-M
     @NEW
-    D;JLT
+    D;JGT
     @INC
     0;JMP
 
