@@ -17,13 +17,29 @@
     D=M
     @count
     D=D-M
-    @END
+    @STOP
     D;JEQ
 
     @previndex
     A=M
     D=M
     @NEG
+    D;JLT
+    @POS
+    0;JMP
+(NEG)
+    @index
+    A=M
+    D=M
+    @NEGNEG
+    D;JLT
+    @INC
+    0;JMP
+(POS)
+    @index
+    A=M
+    D=M
+    @POSNEG
     D;JLT
 (NEGNEG)
     @previndex
@@ -36,15 +52,10 @@
     D;JGT
     @INC
     0;JMP
-(NEG)
-    @index
-    A=M
-    D=M
-    @NEGNEG
-    D;JLT
-    @INC
+(POSNEG)
+    @SWAP
     0;JMP
-
+    
 (SWAP)
     @previndex
     A=M
@@ -75,10 +86,11 @@
     @LOOP
     0;JMP
 
-
-(END)
+(STOP)
     @R0
     M=-1
+
+(END)
     @END
     0;JMP
     
