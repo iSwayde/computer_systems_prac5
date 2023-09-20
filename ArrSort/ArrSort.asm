@@ -23,10 +23,8 @@
     @previndex
     A=M
     D=M
-    @NEG
-    D;JLT
     @POS
-    0;JMP
+    D;JGT
 (NEG)
     @index
     A=M
@@ -39,7 +37,7 @@
     @index
     A=M
     D=M
-    @POSNEG
+    @SWAP
     D;JLT
 (NEGNEG)
     @previndex
@@ -52,10 +50,7 @@
     D;JGT
     @INC
     0;JMP
-(POSNEG)
-    @SWAP
-    0;JMP
-    
+
 (SWAP)
     @previndex
     A=M
