@@ -25,7 +25,10 @@
     D=M
     @NEG
     D;JLT
-(NEGNEG)    
+(NEGNEG)
+    @previndex
+    A=M
+    D=M
     @index
     A=M
     D=D-M
