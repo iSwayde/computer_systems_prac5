@@ -23,6 +23,9 @@
     @previndex
     A=M
     D=M
+    @NEG
+    D;JLT
+(NEGNEG)    
     @index
     A=M
     D=D-M
@@ -30,7 +33,15 @@
     D;JGT
     @INC
     0;JMP
-
+(NEG)
+    @index
+    A=M
+    D=M
+    @NEGNEG
+    D;JLT
+(NEGPOS)
+    @INC
+    0;JMP
 
 (SWAP)
     @previndex
