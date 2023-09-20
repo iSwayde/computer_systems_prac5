@@ -3,30 +3,20 @@
 
 // Put your code here.
 
-    @R1
-    D=M
-    @END
-    D;JEQ
-    @last
-    M=D
-    @R2
-    D=M
-    @last
-    M=M+D
+    @count
+    M=1
     @R1
     A=M
     D=M
     @R0
     M=D
     @R1
-    D=M
-    @i
-    M=D+1
+    M=M+1
 (LOOP)
-    @i
+    @R2
     D=M
-    @last
-    D=M-D
+    @count
+    D=D-M 
     @END
     D;JEQ
 
@@ -35,30 +25,32 @@
     @NEG
     D;JLE
 (POS)
-    @i
+    @R1
     A=M
     D=M-D
-    @NEW
-    D;JGT
-    @INC
-    0;JMP
-(NEG)
-    @i
-    A=M
-    D=D-M
     @NEW
     D;JLT
     @INC
     0;JMP
+(NEG)
+    @R1
+    A=M
+    D=D-M
+    @NEW
+    D;JGT
+    @INC
+    0;JMP
 
 (NEW)
-    @i
+    @R1
     A=M
     D=M
     @R0
     M=D
 (INC)
-    @i
+    @R1
+    M=M+1
+    @count
     M=M+1
     @LOOP
     0;JMP
