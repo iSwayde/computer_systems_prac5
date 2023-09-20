@@ -23,16 +23,15 @@
     @R0
     D=M
     @NEG
-    D;JLE
+    D;JLT
 (POS)
     @R1
     A=M
-    D=M-D
-    @NEW
+    D=M
+    @POSNEG
     D;JLT
-    @INC
-    0;JMP
-(NEG)
+    @R0
+    D=M
     @R1
     A=M
     D=D-M
@@ -40,6 +39,30 @@
     D;JGT
     @INC
     0;JMP
+(POSNEG)
+    @R1
+    A=M
+    D=M
+    @R0
+    M=D
+    @INC
+    0;JMP
+(NEG)
+    @R1
+    A=M
+    D=M
+    @INC
+    D;JGT
+    @R0
+    D=M
+    @R1
+    A=M
+    D=M-D
+    @NEW
+    D;JLT
+    @INC
+    0;JMP
+
 
 (NEW)
     @R1

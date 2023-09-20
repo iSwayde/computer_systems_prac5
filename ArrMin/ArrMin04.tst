@@ -2,8 +2,8 @@
 //This breaks my code, haven't been able to fix it. The issue is caused by overflows...
 
 load ArrMin.asm,
-output-file ArrMin03.out,
-compare-to ArrMin03.cmp,    
+output-file ArrMin04.out,
+compare-to ArrMin04.cmp,    
 output-list RAM[0]%D2.6.2 RAM[1]%D2.6.2 RAM[2]%D2.6.2 RAM[20]%D2.6.2 RAM[21]%D2.6.2 RAM[22]%D2.6.2 RAM[23]%D2.6.2 RAM[24]%D2.6.2;
 
 set PC 0,
